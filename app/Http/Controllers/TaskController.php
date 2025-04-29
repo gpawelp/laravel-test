@@ -8,10 +8,25 @@ use App\Models\User;
 class TaskController extends Controller
 {
     
-    public function index() 
+    public function index(User $usr) 
+    {
+        return view('user', compact('usr'));
+        
+        //dd($id);
+        //$user = User::findOrFail($id);
+        
+        //dd($user);
+        
+        
+        //return view('user', compact('user'));
+        //return $user;
+    }
+    
+    public function all()
     {
         return User::all();
     }
+    
     
     //
     //public function create()
