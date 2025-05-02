@@ -25,13 +25,4 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    
-
-    public function test($id)
-    {
-        echo $id;
-        
-        
-       //return view('hello'); 
-    }
 }

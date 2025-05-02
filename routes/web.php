@@ -23,7 +23,8 @@ Route::get('/simple', [App\Http\Controllers\SimpleController::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/user/{usr}', [App\Http\Controllers\TaskController::class, 'index']);
+Route::get('/users', [App\Http\Controllers\TaskController::class, 'all']);
+//Route::get('/user/{usr}', [App\Http\Controllers\TaskController::class, 'index']);
 
 
 //Route::get('/test/{id}', [App\Http\Controllers\HomeController::class, 'test']);
@@ -46,3 +47,22 @@ Route::prefix('jobs')->group(function() {
     Route::get('create', [App\Http\Controllers\TaskController::class, 'create']);
     Route::post('create', [App\Http\Controllers\TaskController::class, 'store'])->name('jobs.store');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

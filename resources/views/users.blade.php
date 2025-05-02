@@ -3,11 +3,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <ul>
-        @foreach($users as $user)
-            <li>{{ $user }}</li>
+        
+        @foreach($users as $userSingle)
+            <p>{{ $userSingle->name }}</p>
         @endforeach
-        </ul>
+        
+        {{ $users->links() }}
+        
     </div>
 </div>
 @endsection
