@@ -14,8 +14,35 @@ use App\Models\NewPost;
   |
  */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return view('pages.home');
+});
+
+Route::get('/about', function() {
+    return view('pages.about');
+});
+
+Route::get('/contact', function() {
+    return view('pages.contact');
+});
+
+
+
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+
+/*
+
+
+Route::get('/users_test', function() {
+   $users = [
+//       'Pierwszy',
+//       'Drugi',
+//       'Trzeci'
+   ];
+   
+   return view('users_test', compact('users'));
 });
 
 Auth::routes();
@@ -98,3 +125,5 @@ Route::get('/posts', function () {
 //    $post->description = "a desc";
 //    $post->save();
 });
+
+*/
