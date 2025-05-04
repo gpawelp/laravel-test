@@ -19,6 +19,27 @@ Route::get('/', function() {
     return view('pages.home');
 });
 
+
+
+Route::get('/math', function() {
+//    $data = collect([1,2,5,6,7,9]);
+//    
+//    dd($data->median());
+    
+    $data = collect([
+        ['price' => 100, 'sold' => 1],
+        ['price' => 200, 'sold' => 1],
+        ['price' => 300, 'sold' => 0],
+    ]);
+    
+    return ($data->sum(function($value) {
+        if (!$value['sold']) {
+            return null;
+        }
+        return $value['price'];
+    }));
+});
+
 Route::get('/array', function() {
    
     $array = [

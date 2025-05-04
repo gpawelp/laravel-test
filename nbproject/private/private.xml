@@ -5,6 +5,8 @@
         <group>
             <file>file:/home/pawelg/Projekty/test/routes/web.php</file>
             <file>file:/home/pawelg/Projekty/test/app/Models/NewPost.php</file>
+            <file>file:/home/pawelg/Projekty/test/app/Http/Controllers/ContactController.php</file>
+            <file>file:/home/pawelg/Projekty/test/resources/views/pages/contact.blade.php</file>
         </group>
     </open-files>
 </project-private>
