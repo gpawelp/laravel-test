@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\NewPost;
+use Illuminate\Support\Str;
 
 /*
   |--------------------------------------------------------------------------
@@ -24,6 +25,25 @@ Route::get('/about', function() {
 
 Route::get('/contact', function() {
     return view('pages.contact');
+});
+
+Route::get('/helper', function() {
+//    $sentence = "THe quick brown fox jumps over the lazy dog.";
+    //    echo str_limit($sentence, 20, '...');
+    
+//    $sentence = "car";
+//    echo str_plural($sentence);
+    
+//    $sentence = 'pens';
+//    echo str_singular($sentence);
+    
+    $sentence = 'Laravel is the most popular framework';
+    
+    echo Str::slug($sentence) . "<br>";
+    
+    echo Str::title($sentence) . "<br>";
+    
+    echo Str::random(30) . "<br>";
 });
 
 
