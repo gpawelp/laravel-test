@@ -23,9 +23,7 @@ Route::get('/about', function() {
     return view('pages.about');
 });
 
-Route::get('/contact', function() {
-    return view('pages.contact');
-});
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact.view');
 
 Route::get('/helper', function() {
 //    $sentence = "THe quick brown fox jumps over the lazy dog.";
