@@ -19,7 +19,100 @@ Route::get('/', function() {
     return view('pages.home');
 });
 
+Route::get('/filter', function() {
+    $collection = collect([
+        [
+            'user_id' => '1',
+            'name' => 'john doe',
+            'email' => 'johndoe@gmail.com',
+            'address' => 'USA',
+        ],
+        [
+            'user_id' => '2',
+            'name' => 'David',
+            'email' => 'david123@gmail.com',
+            'address' => 'UK',
+        ],
+        [
+            'user_id' => '3',
+            'name' => 'Richard',
+            'email' => 'richard@gmail.com',
+            'address' => 'Australia',
+        ],
+    ]);
+    
+    $filtered = $collection->filter(function($value, $key) {
+        if ($value['user_id'] == 2) {
+            return true;
+        }
+        
+    });
+    
+    dd($filtered->all());
+    
+    
+//    $data = collect([1,2,3,4,5]);
+//    
+//    $filtered = $data->filter(function($value, $key) {
+//        return $value > 2;
+//    });
+//    
+//    dd($filtered->all());
+});
 
+Route::get('/collect', function() {
+    
+    $data = collect([1,2,3,4,5,6]);
+    dump($data->take(-2));
+});
+
+Route::get('/contains', function() {
+    $data = collect([
+        ['role' => 'admin'],
+        ['role' => 'supervisior'],
+        ['role' => 'editor'],
+    ]);
+    
+    dd($data->pluck('role')->contains('manager'));
+    
+});
+
+
+Route::get('/pluck', function() {
+    $collection = collect([
+        ['brand' => 'tesla', 'color' => 'red'],
+        ['brand' => 'toyota', 'color' => 'pink'],
+        ['brand' => 'tesla', 'color' => 'black'],
+        ['brand' => 'teyota', 'color' => 'orange'],
+    ]);
+    
+    $data = $collection->pluck('color', 'brand');
+    
+    dd($data);
+//    $roles = collect([
+//        ['name' => 'admin'],
+//        ['name' => 'supervisor'],
+//        ['name' => 'editor'],
+//    ]);
+//    
+//    dd($roles->pluck('name'));
+    
+});
+
+Route::get('/other_operations', function() {
+//    $data = collect([1,2,3,4,5,6,7]);
+//    
+//    dd($data->chunk(3));
+    
+    $data = collect([
+        [1,2,3,4,6,7],
+        [2,3],
+        [7,1,5]
+    ]);
+    
+    dd($data->collapse());
+    
+});
 
 Route::get('/math', function() {
 //    $data = collect([1,2,5,6,7,9]);
