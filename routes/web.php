@@ -19,6 +19,41 @@ Route::get('/', function() {
     return view('pages.home');
 });
 
+Route::get('/array', function() {
+   
+    $array = [
+        'name' => 'John Doe',
+        'age' => 22
+    ];
+    
+    $array = array_divide($array);
+    
+    
+    $array = [
+        ['1', '2', '3'],
+        ['4', '5', '6'],
+    ];
+    
+    $array = array_collapse($array);
+    
+    
+    $array = [
+        'name' => 'shampoo',
+        'price' => 50
+    ];
+    
+    $array = array_except($array, ['price']);
+    
+    
+    
+//    $array = array_add($array, 'country', 'USA');
+//    $array = array_add($array, 'number', 123123123);
+    
+    dd($array);
+    
+});
+
+
 Route::get('/about', function() {
     return view('pages.about');
 });
