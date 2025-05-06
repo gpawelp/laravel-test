@@ -8,7 +8,16 @@ use App\Models\User;
 class TaskController extends Controller
 {
     
+    /**
+     * 
+     */
     public function index()
+    {
+        $users = User::get();
+        return view('users_list', compact('users'));
+    }
+    
+    public function indexOld()
     {
         $user = User::paginate();
         

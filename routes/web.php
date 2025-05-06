@@ -19,6 +19,14 @@ Route::get('/', function() {
     return view('pages.home');
 });
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home_posts', [App\Http\Controllers\HomeController::class, 'posts'])->name('home_posts');
+
+Route::get('/users_list', [App\Http\Controllers\TaskController::class, 'index']);
+
+
 Route::get('/filter', function() {
     $collection = collect([
         [
@@ -294,3 +302,5 @@ Route::get('/posts', function () {
 });
 
 */
+
+

@@ -7,6 +7,11 @@
             <file>file:/home/pawelg/Projekty/test/app/Models/NewPost.php</file>
             <file>file:/home/pawelg/Projekty/test/app/Http/Controllers/ContactController.php</file>
             <file>file:/home/pawelg/Projekty/test/resources/views/pages/contact.blade.php</file>
+            <file>file:/home/pawelg/Projekty/test/app/Models/User.php</file>
+            <file>file:/home/pawelg/Projekty/test/app/Http/Controllers/TaskController.php</file>
+            <file>file:/home/pawelg/Projekty/test/resources/views/hello.blade.php</file>
+            <file>file:/home/pawelg/Projekty/test/resources/views/users_list.blade.php</file>
+            <file>file:/home/pawelg/Projekty/test/app/Models/Profile.php</file>
         </group>
     </open-files>
 </project-private>

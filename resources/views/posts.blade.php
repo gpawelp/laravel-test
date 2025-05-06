@@ -16,11 +16,9 @@
                     <p> {{ Auth::user()->profile->address }}</p>
                     
                     <div class="alert alert-info" role="alert">
-                        @foreach($users as $user)
-                            @foreach($user->posts as $post)
-                                <p>{{ $post->title }}</p>
-                            @endforeach
-                            <p>{{$user->name}}</p>
+                        @foreach($posts as $post)
+                            <p>{{ $post->title }}</p>
+                            <p>{{ $post->users->name }}</p>
                             <hr>
                         @endforeach
                     </div>
