@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Post;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $users = User::has('posts')->get();
+//        return $users;
+        return view('home', compact('users'));
+    }
+    
+    public function posts() 
+    {
+        $posts = Post::with('users')->get();
+        return view('posts', compact('posts'));
     }
 }
