@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Models\Comment;
 use App\Models\NewPost;
@@ -29,20 +30,14 @@ Route::get('/', function() {
 
 Route::get('/home', [HomeController::class, 'index'])->name('index');
 
-Route::get('/home_posts', [HomeController::class, 'posts'])->name('posts');
+Route::get('/contacts', [ContactController::class, 'index'])->name('contact.index');
+Route::get('/contacts/create', [ContactController::class, 'create'])->name('contact.create');
 
-Route::get('/home_posts_with_tags', [HomeController::class, 'postsWithTags'])->name('postsWithTags');
+Route::get('/contacts/{id}/edit', [ContactController::class, 'edit'])->name('contact.edit');
+Route::post('/contacts/{id}/update', [ContactController::class, 'update'])->name('contact.update');
 
+Route::post('/contacts', [ContactController::class, 'store'])->name('contact.store');
 
-Route::get('/posts', function() {
-    
-    $video = Video::find(2);
-    
-    $comment = new Comment();
-    $comment->body = 'This is a comment for video';
-    
-    $video->comments()->save($comment);
-    
-//    
-//    dd($post);
-});
+Route::get('/contacts/{id}', [ContactController::class, 'show'])->name('contact.show');
+
+Route::post('/contacts/{id}/delete', [ContactController::class, 'destroy'])->name('contact.destroy');
