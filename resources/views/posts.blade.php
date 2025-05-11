@@ -13,8 +13,11 @@
                     </div>
                     
                     <p> {{ Auth::user()->name }}</p>
-                    <p> {{ Auth::user()->profile->address }}</p>
-                    
+                    @if(Auth::user()->profile)
+                            <div class="alert alert-dark">
+                                <p> {{ Auth::user()->profile->address }}</p>
+                            </div>
+                    @endif
                     <div class="alert alert-info" role="alert">
                         @foreach($posts as $post)
                             <p>{{ $post->title }}</p>
