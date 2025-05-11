@@ -1,10 +1,14 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Models\Comment;
 use App\Models\NewPost;
 use App\Models\Post;
-use App\Models\Tag;
 use App\Models\PostTag;
+use App\Models\Tag;
+use App\Models\Video;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
 /*
@@ -23,8 +27,22 @@ Route::get('/', function() {
     return view('pages.home');
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+Route::get('/home', [HomeController::class, 'index'])->name('index');
 
-Route::get('/home_posts', [App\Http\Controllers\HomeController::class, 'posts'])->name('posts');
+Route::get('/home_posts', [HomeController::class, 'posts'])->name('posts');
 
-Route::get('/home_posts_with_tags', [App\Http\Controllers\HomeController::class, 'postsWithTags'])->name('postsWithTags');
+Route::get('/home_posts_with_tags', [HomeController::class, 'postsWithTags'])->name('postsWithTags');
+
+
+Route::get('/posts', function() {
+    
+    $video = Video::find(2);
+    
+    $comment = new Comment();
+    $comment->body = 'This is a comment for video';
+    
+    $video->comments()->save($comment);
+    
+//    
+//    dd($post);
+});
