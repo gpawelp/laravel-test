@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class Video extends Model
 {
     use HasFactory;
     
-    public function post()
+    public function comments()
     {
-        return $this->belongsToMany(Post::class, 'post_tag', 'tag_id');
+        return $this->morphMany(Comment::class, 'commentable');
     }
 }
