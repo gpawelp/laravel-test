@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\NewPost;
+use App\Models\Post;
+use App\Models\Tag;
+use App\Models\PostTag;
 use Illuminate\Support\Str;
 
 /*
@@ -24,4 +27,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/home_posts', [App\Http\Controllers\HomeController::class, 'posts'])->name('posts');
 
-//Route::get('/home_users_list', [App\Http\Controllers\HomeController::class, 'users_list'])->name('users_list');
+Route::get('/home_posts_with_tags', [App\Http\Controllers\HomeController::class, 'postsWithTags'])->name('postsWithTags');

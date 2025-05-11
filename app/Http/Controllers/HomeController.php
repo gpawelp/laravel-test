@@ -34,4 +34,10 @@ class HomeController extends Controller
         $posts = Post::with('users')->get();
         return view('posts', compact('posts'));
     }
+    
+    public function postsWithTags()
+    {
+        $posts = Post::with('tag')->get();
+        return view('posts_tags', compact('posts'));
+    }
 }
