@@ -1,19 +1,27 @@
 Instalacja tego projektu:
 --------------------------------------------------
 composer create-project laravel/laravel test "8.0"
+
 composer audit
+
 composer require laravel/ui:^3.0
 
 php artisan ui bootstrap
+
 php artisan ui bootstrap --auth
+
 npm install && npm run dev
 
 php artisan ui react
+
 php artisan ui react --auth
+
 npm install && npm run dev
+
 npm install laravel-mix --save-dev
 
 composer require laravel/helpers
+
 --------------------------------------------------
 
 ## About Laravel
