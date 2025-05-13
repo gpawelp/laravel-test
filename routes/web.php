@@ -31,6 +31,9 @@ Route::get('/', function() {
 
 Route::get('/home', [HomeController::class, 'index'])->name('index');
 
-Route::get('/album/home', [ImageController::class, 'home'])->name('album.home');
-Route::get('/album', [ImageController::class, 'index'])->name('album.index');
+//Route::get('/album/home', [ImageController::class, 'home'])->name('album.home');
+
+Route::get('/album/index', [ImageController::class, 'index'])->name('album.index');
+
+Route::get('/album', [ImageController::class, 'home'])->name('album.home');
 Route::post('/album', [ImageController::class, 'store'])->name('album.store');

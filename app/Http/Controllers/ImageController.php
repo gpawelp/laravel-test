@@ -23,6 +23,11 @@ class ImageController extends Controller
     
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'album' => 'required|min:3|max:50',
+            'image' => 'required'
+        ]);
+        
         $album = Album::create(['name' => $request->get('album')]);
         
         if ($request->hasFile('image')) {
@@ -41,6 +46,8 @@ class ImageController extends Controller
 ////            ]);
         }
 
-        return redirect()->route('album.index');
+        return '<div class="alert alert-success">Album created successfully!</div>';
+        
+//        return redirect()->route('album.home');
     }
 }

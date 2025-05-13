@@ -7,7 +7,8 @@
                 <div class="card">
                     <div class="card-header">
                         {{ __('Album') }}
-                        <a href="{{ route('album.home') }}" class="btn btn-primary float-end">Add images</a>
+                        <a href="{{ route('album.home') }}" 
+                           class="btn btn-primary float-end">{{ __('Add images') }}</a>
                     </div>
 
                     <div class="card-body">
