@@ -31,9 +31,15 @@ Route::get('/', function() {
 
 Route::get('/home', [HomeController::class, 'index'])->name('index');
 
-//Route::get('/album/home', [ImageController::class, 'home'])->name('album.home');
 
 Route::get('/album/index', [ImageController::class, 'index'])->name('album.index');
+Route::get('/album/album', [ImageController::class, 'album'])->name('album.album');
 
 Route::get('/album', [ImageController::class, 'home'])->name('album.home');
+
+Route::post('/album/addimage', [ImageController::class, 'addImage'])->name('album.addimage');
 Route::post('/album', [ImageController::class, 'store'])->name('album.store');
+
+Route::get('/albums/{id}', [ImageController::class, 'show'])->name('album.show');
+
+Route::post('/image/delete', [ImageController::class, 'destroy'])->name('image.delete');
