@@ -9,7 +9,11 @@ class Album extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['name'];
+    protected $fillable = ['name', 'image'];
+    
+    public $timestamps = false;
+    
+    protected $dateFormat = 'Y-m-d HH:MM:ss';
     
     public function images()
     {

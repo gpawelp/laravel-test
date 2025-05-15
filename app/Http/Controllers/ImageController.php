@@ -113,4 +113,26 @@ class ImageController extends Controller
             'code' => 2
         ];
     }
+    
+    public function albumImage(Request $request)
+    {
+        $this->validate($request, [
+            'image' => 'required'
+        ]);
+        
+        $albumId = $request->get('id');
+        
+        $album = Album::findOrFail($request->get('id'));
+        
+        if ($request->hasFile('image') && isset($album)) {
+            $file = $request->file('image');
+            $path = $file->store('uploads', 'public');
+            Album::where('id', $albumId)
+                ->update([
+                    'image' => $path,
+                ]);
+        }
+
+        return redirect()->back()->with('message', 'Album image added successfully');
+    }
 }
