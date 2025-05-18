@@ -29,6 +29,9 @@ Route::get('/', function() {
     return view('pages.home');
 });
 
+Route::get('/upload', [ImageController::class, 'upload']);
+Route::post('/upload', [ImageController::class, 'postUpload'])->name('upload');
+
 Route::get('/home', [HomeController::class, 'index'])->name('index');
 
 Route::post('/add/album/image', [ImageController::class, 'albumImage'])->name('add.album.image');

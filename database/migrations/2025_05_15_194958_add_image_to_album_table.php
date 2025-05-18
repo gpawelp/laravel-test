@@ -14,7 +14,7 @@ class AddImageToAlbumTable extends Migration
     public function up()
     {
         Schema::table('albums', function (Blueprint $table) {
-            $table->string('image')->after('name');
+            $table->string('image')->nullable()->after('name');
         });
     }
 
@@ -26,7 +26,7 @@ class AddImageToAlbumTable extends Migration
     public function down()
     {
         Schema::table('albums', function (Blueprint $table) {
-            $table->drop('image');
+            $table->dropColumn('image');
         });
     }
 }

@@ -24,12 +24,14 @@
                         </div>
 
                         <!-- Button trigger modal -->
+                        @if(Auth::check() && Auth::user()->user_type === 'admin')
                         <button type="button" 
                                 class="btn btn-primary" 
                                 data-bs-toggle="modal" 
                                 data-bs-target="#exampleModal{{ $album->id }}">
                             {{ __('Add image') }}
                         </button>
+                        @endif
 
                         <!-- Modal -->
                         <div class="modal fade" 
