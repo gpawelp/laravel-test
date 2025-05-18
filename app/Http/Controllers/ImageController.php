@@ -6,10 +6,17 @@ use App\Models\Album;
 use App\Models\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Image as InterventionImage;
 
 class ImageController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('admin', ['only' => ['index', 'addImage', 'store']]);
+    }
+
+    
     public function album()
     {
         $albums = Album::with('images')->get();
@@ -135,4 +142,42 @@ class ImageController extends Controller
 
         return redirect()->back()->with('message', 'Album image added successfully');
     }
+    
+    public function upload()
+    {
+        $albums = Album::get();
+        
+        return view('album.upload', compact('albums'));
+    }
+    
+    public function postUpload(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            
+////            dd($fileName);
+//            
+//            $image = InterventionImage::make($file);
+////                ->resize(300, 300);
+//
+//            dd($image);
+//            
+//            Storage::put(
+//                'avatars/' . $image
+//            );
+//            
+//            
+//            InterventionImage::make($file)->resize(300, 300)->save('avatars/' . $fileName);
+            
+            Album::create([
+                'image' => $fileName,
+                'name' => 'resizing image'
+            ]);
+            return back();
+        }
+        
+        return redirect('home');
+    }
+    
 }

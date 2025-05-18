@@ -7,8 +7,10 @@
                 <div class="card">
                     <div class="card-header">
                         {{ __('Album') }}
+                        @if(Auth::check() && Auth::user()->user_type === 'admin')
                         <a href="{{ route('album.home') }}" 
                            class="btn btn-primary float-end">{{ __('Add images') }}</a>
+                        @endif
                     </div>
 
                     <div class="card-body">

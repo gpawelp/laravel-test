@@ -11,9 +11,11 @@
         <div id="errorMessage"></div>
         
         <div class="form-control">
+            @if(Auth::check() && Auth::user()->user_type === 'admin')
             <button type="button" class="btn btn-primary" 
                     data-bs-toggle="modal" 
                     data-bs-target="#addImageModal">{{ __('Dodaj zdjęcie') }}</button>
+            @endif
             
             <!-- Modal Add -->
             <div class="modal fade" id="addImageModal" 
@@ -58,9 +60,11 @@
                     </div>-->
 
                     <!-- Button trigger modal -->
+                    @if(Auth::check() && Auth::user()->user_type === 'admin')
                     <button type="button" class="btn btn-danger" 
                             data-bs-toggle="modal" data-bs-target="#exampleModal{{ $image->id }}">{{ __('Usuń') }}</button>
-
+                    @endif
+                    
                     <!-- Modal REMOVE -->
                     <div class="modal fade" id="exampleModal{{ $image->id }}" 
                          tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
