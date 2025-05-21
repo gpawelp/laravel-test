@@ -3,16 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/pawelg/Projekty/test/routes/web.php</file>
             <file>file:/home/pawelg/Projekty/test/app/Http/Controllers/ImageController.php</file>
-            <file>file:/home/pawelg/Projekty/test/public/css/app.css</file>
-            <file>file:/home/pawelg/Projekty/test/app/Models/Image.php</file>
-            <file>file:/home/pawelg/Projekty/test/app/Models/Album.php</file>
+            <file>file:/home/pawelg/Projekty/test/app/Http/Middleware/Admin.php</file>
+            <file>file:/home/pawelg/Projekty/test/app/Http/Kernel.php</file>
+            <file>file:/home/pawelg/Projekty/test/database/migrations/2025_05_18_123937_add_user_type_to_users.php</file>
+            <file>file:/home/pawelg/Projekty/test/resources/views/forms/add_images_with_hidden_album_id.blade.php</file>
+            <file>file:/home/pawelg/Projekty/test/resources/views/forms/add_images_main.blade.php</file>
+            <file>file:/home/pawelg/Projekty/test/resources/views/forms/add_images.blade.php</file>
             <file>file:/home/pawelg/Projekty/test/resources/views/album/add_new.blade.php</file>
             <file>file:/home/pawelg/Projekty/test/resources/views/album/galery.blade.php</file>
-            <file>file:/home/pawelg/Projekty/test/public/css/other.css</file>
             <file>file:/home/pawelg/Projekty/test/resources/views/album/home.blade.php</file>
+            <file>file:/home/pawelg/Projekty/test/resources/views/album/index_list.blade.php</file>
             <file>file:/home/pawelg/Projekty/test/resources/views/album/welcome.blade.php</file>
+            <file>file:/home/pawelg/Projekty/test/composer.json</file>
+            <file>file:/home/pawelg/Projekty/test/config/app.php</file>
+            <file>file:/home/pawelg/Projekty/test/routes/web.php</file>
+            <file>file:/home/pawelg/Projekty/test/resources/views/album/upload.blade.php</file>
+            <file>file:/home/pawelg/Projekty/test/vendor/intervention/image/src/Intervention/Image/Image.php</file>
+            <file>file:/home/pawelg/Projekty/test/vendor/laravel/framework/src/Illuminate/Support/Facades/Storage.php</file>
         </group>
     </open-files>
 </project-private>
